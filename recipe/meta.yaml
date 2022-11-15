@@ -1,6 +1,6 @@
 {% set name = "fortnet" %}
 {% set version = "0.7.2" %}
-{% set build = 0 %}
+{% set build = 1 %}
 {% set mpi = mpi or "nompi" %}
 {% set origin = "vanderhe" %}
 
@@ -34,10 +34,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
-    - python
+    - python >=3.7
     - h5py
-    - numpy
-    - cmake
+    - numpy >=1.14.5
+    - cmake >=3.16
     - ninja
   host:
     - mpifx * mpi_{{ mpi }}_*  # [mpi != "nompi"]
