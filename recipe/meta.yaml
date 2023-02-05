@@ -1,6 +1,6 @@
 {% set name = "fortnet" %}
 {% set version = "0.7.2" %}
-{% set build = 1 %}
+{% set build = 2 %}
 {% set mpi = mpi or "nompi" %}
 {% set origin = "vanderhe" %}
 
@@ -42,12 +42,10 @@ requirements:
   host:
     - mpifx * mpi_{{ mpi }}_*  # [mpi != "nompi"]
     - libblas
-    - hdf5 >=1.10.4
+    - hdf5
     - hdf5 * nompi_*
   run:
     - {{ pin_compatible('mpifx', max_pin='x.x') }} mpi_{{ mpi }}_*  # [mpi != "nompi"]
-    # hdf5 >=1.10.4 has run_exports
-    - hdf5
 
 test:
   commands:
