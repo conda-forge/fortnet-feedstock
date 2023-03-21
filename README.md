@@ -1,11 +1,11 @@
-About fortnet
-=============
+About fortnet-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fortnet-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/vanderhe/fortnet
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fortnet-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fortnet, a software package for training Behler-Parrinello neural networks
 

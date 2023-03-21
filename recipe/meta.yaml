@@ -1,6 +1,6 @@
 {% set name = "fortnet" %}
-{% set version = "0.7.2" %}
-{% set build = 2 %}
+{% set version = "0.7.3" %}
+{% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 {% set origin = "vanderhe" %}
 
@@ -10,21 +10,21 @@ package:
 
 source:
   url: https://github.com/{{ origin }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 77f9477231491af7400ef74061d89149b67eae14bd8fedce690a4a79b2294c9c
+  sha256: 20e285b098f1417be96c6353aa034658f1e8190683177efab56e3bbabfffd777
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
 {% endif %}
 build:
   number: {{ build }}
-  skip: True  # [not linux]
+  skip: true  # [not linux]
 
   {% if mpi != "nompi" %}
   {% set mpi_prefix = "mpi_" + mpi %}
   {% else %}
   {% set mpi_prefix = "nompi" %}
   {% endif %}
-  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
+  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
 
   run_exports:
     - {{ name|lower }} * {{ mpi_prefix }}_*
@@ -60,12 +60,12 @@ about:
   license: LGPL-3.0-or-later
   license_family: LGPL
   license_file:
-    - "LICENSE"
-    - "COPYING"
-    - "COPYING.LESSER"
-    - "external/fsockets/LICENSE"
-    - "external/xmlf90/LICENSE"
-  summary: "Fortnet, a software package for training Behler-Parrinello neural networks"
+    - LICENSE
+    - COPYING
+    - COPYING.LESSER
+    - external/fsockets/LICENSE
+    - external/xmlf90/LICENSE
+  summary: Fortnet, a software package for training Behler-Parrinello neural networks
   doc_url: https://fortnet.readthedocs.io
   dev_url: https://github.com/vanderhe/fortnet
 
