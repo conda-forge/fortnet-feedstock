@@ -1,6 +1,6 @@
 {% set name = "fortnet" %}
 {% set version = "0.7.3" %}
-{% set build = 3 %}
+{% set build = 4 %}
 {% set mpi = mpi or "nompi" %}
 {% set origin = "vanderhe" %}
 
@@ -33,6 +33,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - python >=3.7
     - h5py
