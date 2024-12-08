@@ -9,8 +9,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ origin }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 20e285b098f1417be96c6353aa034658f1e8190683177efab56e3bbabfffd777
+  url: https://github.com/vanderhe/fortnet/archive/refs/heads/master.zip
+  sha256: c6f4e7d6aa26e4bbd6b5590cdf86f5c55b04b2b7141a159842fd7693f647b754
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
